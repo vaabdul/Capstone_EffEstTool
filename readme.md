@@ -22,16 +22,12 @@ Usage
 Endpoints
     /register: POST endpoint for user registration.
     /login: POST endpoint for user login/authentication.
-    /update_password: POST endpoint for updating user password.
-    /delete_user: DELETE endpoint for deleting a user account.
+    /update/<string:id>: POST endpoint for updating user password.
+    /delete/<string:id>: DELETE endpoint for deleting a user account.
     /logout: GET endpoint for user logout.
-    /estimation_submission: POST endpoint for submitting estimation data.
-    /display_details: POST endpoint for displaying historical data on selecting application type.
-    /estimation_calculation: POST endpoint for calculating project estimation based on historical data.
-    /historical_data: GET endpoint for displaying historical estimation data.
-    /his_delete_item/<string:id>: DELETE endpoint for deleting a historical estimation data item.
-    /his_update_item/<string:id>: POST endpoint for updating a historical estimation data item.
-    /update_task_form: PUT endpoint for updating the estimated data.
+    /estimationform: POST endpoint for submitting estimation data.
+    /estCalculate: POST endpoint for calculating project estimation based on historical data.   
+    /tasks: PUT endpoint for updating the tasks
 
 API Documentation
     Detailed API documentation and usage instructions can be found in the docstrings of the Flask application code.
