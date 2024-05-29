@@ -30,9 +30,9 @@ def test_update_task(client):
     
 def test_delete(client):
     response = client.get('/delete/66517d5118d2208990cc680d')
-<<<<<<< HEAD
+
     assert response.status_code == 200 # Redirect with status code 302 (FOUND)
-=======
+
     assert response.status_code == 302 # Redirect with status code 302 (FOUND)
 
 def test_estimate(client):
@@ -44,4 +44,4 @@ def test_logout(client):
     assert response.status_code == 302 # Redirect with status code 302 (FOUND)
 
 
->>>>>>> 93ecea2 (second commit)
+
