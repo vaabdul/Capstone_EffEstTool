@@ -1,0 +1,44 @@
+
+{% extends 'first.html' %}
+
+{% block content %}
+
+  <h2 style="color:saddlebrown">Estimate</h2>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+<form method="post" id="formestimate">
+  <label for="tname">Task name: </label>
+  <input type="text" id="tname" name="tname"><br><br>
+  <label for="complexity">Complexity:</label> 
+    <select name="complexity" id="complexity"> 
+        <option value="low">Low</option> 
+        <option value="medium">Medium</option> 
+        <option value="high">High</option> 
+    </select> <br><br>
+    <label for="size">Size:</label> 
+    <select name="size" id="size"> 
+        <option value="low">Low</option> 
+        <option value="medium">Medium</option> 
+        <option value="high">High</option> 
+    </select> <br><br>
+    <label for="Typeoftask">TypeOfTask:</label> 
+    <select name="Typeoftask" id="Typeoftask"> 
+        <option value="Developing">Developing</option> 
+        <option value="Testing">Testing</option> 
+        <option value="Support">Support</option> 
+    </select> <br><br>
+    <label for="notes">Notes: </label>
+  <input type="text" id="notes" name="notes"><br><br>
+  <input type="submit" value="Estimate"><br><br>
+  <a href='/logout'>logout</a>
+  </form>  
+  <div id ="error_data"> 
+  </div>  
+{% endblock %}

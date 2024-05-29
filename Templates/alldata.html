@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimation Form</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estimation Form</h1>
+    <form id="estimationForm" method="POST">
+        <!-- Your form fields here -->
+    </form>
+    
+    <h2>Submitted Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Complexity</th>
+                <th>Size</th>
+                <th>Type of Task</th>
+                <th>Notes</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>Calculate</th>
+            </tr>
+        </thead>
+        
+        <tbody id="dataRows">
+            {% for task in tasks %}
+            <tr>
+                <td>{{task.tname}}</td>
+                <td>{{task.complexity}}</td>
+                <td>{{task.size}}</td>
+                <td>{{task.Typeoftask}}</td>
+                <td>{{task.notes}}</td>
+                <td><a href="/update/{{ task._id }}"><button type="button">Edit</button></a></td>
+                <td><a href="/delete/{{ task._id }}"><button type="button">Delete</button></a></td>
+                
+
+            </tr>
+             {% endfor %}
+            <!-- Data rows will be added dynamically using JavaScript -->
+        </tbody>
+    </table>
+</body>
+</html>
